@@ -24,8 +24,8 @@ namespace BosunTest
                 BosunUrl = new System.Uri("http://192.168.1.5:8070"),
                 PropertyToTagName = NameTransformers.CamelToLowerSnakeCase,
                 ThrowOnPostFail = true,
-                DefaultTags = new Dictionary<string, string>
-        { {"host", NameTransformers.Sanitize(Environment.MachineName.ToLower())} }
+                DefaultTags = new Dictionary<string, string>{ {"host", NameTransformers.Sanitize(Environment.MachineName.ToLower())},
+                    { "client", "home" }, }
             });
 
             _timer = _collector.CreateMetric<EventGauge>("GetWeather", "time taken", "measures time taken to get weather from api");
